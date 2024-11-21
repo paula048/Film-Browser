@@ -1,0 +1,168 @@
+**/[Nn]ode_modules
+Server/config.js
+
+# Xcode
+!**/*.xcodeproj
+!**/*.pbxproj
+!**/*.xcworkspacedata
+!**/*.xcsettings
+!**/*.xcscheme
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+**/.xcode.env.local
+
+# Gradle
+ShopSocks/build/
+ShopSocks/packages/react-native-gradle-plugin/build/
+ShopSocks/packages/rn-tester/build
+ShopSocks/packages/rn-tester/android/app/.cxx/
+ShopSocks/packages/rn-tester/android/app/build/
+ShopSocks/packages/rn-tester/android/app/gradle/
+ShopSocks/packages/rn-tester/android/app/gradlew
+ShopSocks/packages/rn-tester/android/app/gradlew.bat
+ShopSocks/packages/react-native/ReactAndroid/build/
+ShopSocks/packages/react-native/ReactAndroid/.cxx/
+ShopSocks/packages/react-native/ReactAndroid/gradle/
+ShopSocks/packages/react-native/ReactAndroid/gradlew
+ShopSocks/packages/react-native/ReactAndroid/gradlew.bat
+ShopSocks/packages/react-native/ReactAndroid/external-artifacts/build/
+ShopSocks/packages/react-native/ReactAndroid/external-artifacts/artifacts/
+ShopSocks/packages/react-native/ReactAndroid/hermes-engine/build/
+ShopSocks/packages/react-native/ReactAndroid/hermes-engine/.cxx/
+ShopSocks/packages/react-native/template/android/app/build/
+ShopSocks/packages/react-native/template/android/build/
+ShopSocks/packages/helloworld/android/app/build/
+ShopSocks/packages/helloworld/android/build/
+ShopSocks/packages/react-native-popup-menu-android/android/build/
+ShopSocks/packages/react-native-test-library/android/build/
+
+# Buck
+.buckd
+buck-out
+ShopSocks/.lsp.buckd
+ShopSocks/.lsp-buck-out
+ShopSocks/packages/react-native/ReactAndroid/src/main/jni/prebuilt/lib/
+ShopSocks/packages/react-native/ReactAndroid/src/main/gen
+ShopSocks/.cpplsp.buckd
+
+# Android Studio
+.project
+.settings
+.classpath
+
+# Watchman
+.watchmanconfig
+
+# Android
+.idea
+.gradle
+local.properties
+*.iml
+/packages/react-native/android/*
+!/packages/react-native/android/README.md
+
+# Node
+node_modules
+*.log
+.nvm
+package-lock.json
+
+# OS X
+.DS_Store
+
+# Test generated files
+*.js.meta
+
+ShopSocks/coverage
+ShopSocks/third-party
+
+# Test Reports
+ShopSocks/reports
+
+# Stack Dumps generated when programs crash (Ex. bash.exe.stackdump on Win)
+*.stackdump
+
+# Root dir shouldn't have Xcode project
+ShopSocks/*.xcodeproj
+
+# ReactCommon subdir shouldn't have Xcode project
+ShopSocks/packages/react-native/ReactCommon/**/*.xcodeproj
+
+# Libs that shouldn't have Xcode project
+ShopSocks/packages/react-native/Libraries/FBLazyVector/**/*.xcodeproj
+ShopSocks/packages/react-native/Libraries/Required/**/*.xcodeproj
+ShopSocks/packages/react-native/React/CoreModules/**/*.xcodeproj
+ShopSocks/packages/react-native/React/FBReactNativeSpec/**/*.xcodeproj
+ShopSocks/packages/react-native-codegen/**/*.xcodeproj
+ShopSocks/packages/rn-tester/**/*.xcodeproj
+
+# Ruby Gems (Bundler)
+ShopSocks/packages/react-native/vendor
+ShopSocks/packages/react-native/template/vendor
+ShopSocks/packages/helloworld/vendor
+.ruby-version
+/**/.ruby-version
+vendor/
+
+# iOS / CocoaPods
+ShopSocks/packages/react-native/template/ios/build/
+ShopSocks/packages/react-native/template/ios/Pods/
+ShopSocks/packages/react-native/template/ios/Podfile.lock
+ShopSocks/packages/helloworld/ios/build/
+ShopSocks/packages/helloworld/ios/Pods/
+ShopSocks/packages/helloworld/ios/Podfile.lock
+ShopSocks/packages/rn-tester/Gemfile.lock
+ShopSocks/packages/**/RCTLegacyInteropComponents.mm
+
+# Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
+/packages/rn-tester/Pods/*
+!/packages/rn-tester/Pods/__offline_mirrors_hermes__
+!/packages/rn-tester/Pods/__offline_mirrors_jsc__
+
+# @react-native/codegen
+ShopSocks/packages/react-native/React/FBReactNativeSpec/FBReactNativeSpec
+ShopSocks/packages/react-native-codegen/lib
+ShopSocks/packages/react-native-codegen/tmp/
+ShopSocks/packages/react-native/ReactCommon/react/renderer/components/rncore/
+ShopSocks/packages/rn-tester/NativeModuleExample/ScreenshotManagerSpec*
+/**/RCTThirdPartyFabricComponentsProvider.*
+
+# @react-native/codegen-typescript-test
+/packages/react-native-codegen-typescript-test/lib
+
+# Additional SDKs
+ShopSocks/packages/react-native/sdks/download
+ShopSocks/packages/react-native/sdks/hermes
+ShopSocks/packages/react-native/sdks/hermesc
+ShopSocks/packages/react-native/sdks/hermes-engine/hermes-engine-from-local-source-dir.tar.gz
+
+# Visual studio
+.vscode
+.vs
+
+# Android memory profiler files
+*.hprof
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# E2E files
+ShopSocks/packages/rn-tester-e2e/apps/*.apk
+ShopSocks/packages/rn-tester-e2e/apps/*.app
+
+# CircleCI
+.circleci/generated_config.yml
