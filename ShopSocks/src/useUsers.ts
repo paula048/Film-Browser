@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-const config = require('./config'); 
-
 
 export type ResultJson = {
     id: string,
@@ -27,7 +25,11 @@ const useUsers = (): FetchResultsHookResult => {
     const fetchResults = async () => {
         try {
 
-            const url = `http://${config.localhost}:3000/users`;
+
+            const localhost = "192.168.149.225";
+            const url = `http://${localhost}:3000/users`;
+  
+            
 
             console.log("START connect Server^^^^^^^^^^^^");
             const response = await fetch(url);

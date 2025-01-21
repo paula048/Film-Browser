@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { Button, Text, View } from "react-native";
 
@@ -14,9 +16,11 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ setIsAuthenticated }) =
     return (
         <View>
             <Text>Settings Screen</Text>
-            <Button title="Log out" onPress={handleLogout} />
+            <Button title="Log out" onPress={handleLogout} testID="logOutButton"/>
         </View>
     );
 };
 
 export default SettingsScreen;
+
+

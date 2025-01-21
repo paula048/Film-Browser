@@ -1,27 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import { AsyncStorage } from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from "@react-navigation/stack";
-
-
-
-
 import { Button, Text, View, FlatList, StyleSheet, Image, TouchableOpacity,Dimensions } from "react-native";
-import useResult from "../useResult";
-import React, { useState, useEffect } from 'react';
 
+import useFilms from "../useFilms";
 import ProductDetailsScreen from "./ProductDetailsScreen";
+
+
+
 
 const numColumns = 2
 const KEY_userEmail = "userEmail";
 const KEY_userPassword = "userPassword";
 
-
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
-
 
 const getData = async (key) => {
   try {
@@ -43,41 +38,17 @@ export default function HomeScreen({ navigation }) {
 
   const onPress = (item) => {
     setCount(prevCount => prevCount + 1);
-    
-    navigation.navigate("Shop", { selectedItem: item });
+    navigation.navigate("Browser", { selectedItem: item });
   };
 
   const ProductDetailsView = (item) => {
     console.log("IT: LOVEEEEEEEEEEEEEEEEEE "+ item.id);
-    navigation.navigate("Product", { selectedItem: item, myID: item.id });
+    navigation.navigate("Film", { selectedItem: item, myID: item.id });
   };
   
 
+   const { error, loading, jsonResponse } = useFilms();
 
-
-  const { error, loading, jsonResponse } = useResult();
-
-
-  // const renderItem = ({ item }) => {
-
-  //   return (
-  //       <View>
-  //         <Image source={{ uri: item.image }} style={{ width: 60, height: 60 }} />
-  //         <View>
-  //           <Text style={{ fontWeight: "bold" }}>{item.brand}</Text>
-  //           <Text>{item.name}</Text>
-  //         </View>
-
-  //         <Button title="View" onPress={() => ProductDetailsView(item)}>
-  //         </Button>
-
-  //         <TouchableOpacity style={{ height: 50, width: 50, justifyContent: "center", alignItems: "center", height: Dimensions.get('window').width / numColumns }} onPress={() => onPress(item)}>
-  //           <Text style={{ color: "green" }}>Buy</Text>
-  //           <Text style={{ color: "green" }}>33.99</Text>
-  //         </TouchableOpacity>
-  //       </View>
-  //   );
-  // };
 
   const ResultData = () => {
     if (jsonResponse) {
@@ -101,11 +72,9 @@ export default function HomeScreen({ navigation }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.itemContainer} onPress={() => ProductDetailsView(item)}>
       <Image source={{ uri: item.image }} style={styles.image} />
-      <Text style={styles.brand}>{item.brand}</Text>
-      {/* <Text>{item.name}</Text> */}
-      <Text numberOfLines={2} ellipsizeMode="tail">{item.name.substring(0, 40)}</Text>
-      <Text style={styles.brand}>{item.price} zł</Text>
-      <Image source={require('../img/heart_empty.png')} style={styles.heartImage} />
+      <Text>{item.year}</Text>
+      <Text style={styles.brand} numberOfLines={2} ellipsizeMode="tail">{item.title.substring(0, 40)}</Text>
+      <Text>{item.director}</Text>
     </TouchableOpacity>
   );
 
@@ -114,7 +83,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View>
       <Stack.Navigator>
-        <Stack.Screen name="Product" component={ProductDetailsScreen} />
+        <Stack.Screen name="Film" component={ProductDetailsScreen} />
       </Stack.Navigator>
 
       <ResultData />
@@ -142,13 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 200,
     marginBottom: 5,
-  },
-  heartImage: {
-    width: 20,
-    height: 20,
   },
   brand: {
     fontWeight: 'bold',

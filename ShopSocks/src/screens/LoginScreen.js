@@ -12,7 +12,7 @@ import { err } from 'react-native-svg';
 
 
 
-const logo = require("../img/logo.jpg")
+const logo = require("../img/logo.png")
 
 
 const KEY_userEmail = "userEmail";
@@ -104,12 +104,12 @@ export default function LoginScreen({ setIsAuthenticated }) {
             </View>
 
             <View style={styles.buttonView}>
-                <Pressable style={styles.button} onPress={handleLogin}>
+                <Pressable style={styles.button} onPress={handleLogin} testID="loginButton">
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </Pressable>
             </View>
 
-            <Text style={styles.footerText}>Don't Have Account?<Text style={styles.signup} onPress={() => navigation.navigate("SignUp")}>  Sign Up</Text></Text>
+            <Text style={styles.footerText}>Don't Have Account?<Text style={styles.signup} onPress={() => navigation.navigate("SignUp")} testID="goToSignUp" >  Sign Up</Text></Text>
         </SafeAreaView>
     );
 }
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
       color : "red"
     },
     button : {
-      backgroundColor : "red",
+      backgroundColor : "green",
       height : 45,
       borderColor : "gray",
       borderWidth  : 1,

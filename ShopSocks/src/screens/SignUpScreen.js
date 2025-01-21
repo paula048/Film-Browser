@@ -57,9 +57,11 @@ export default function SignUpScreen({ setIsAuthenticated }) {
 
     const handleSignUp = () => {
       console.log("TRY set data");
+
       useUsersSET(name, surname, email, password);
       setIsAuthenticated(true);
       navigation.navigate("Home");
+
 
   };
 
@@ -75,7 +77,7 @@ export default function SignUpScreen({ setIsAuthenticated }) {
 
 
             <View style={styles.buttonView}>
-                <Pressable style={styles.button} onPress={handleSignUp}>
+                <Pressable style={styles.button} onPress={handleSignUp} testID="signUpButton">
                     <Text style={styles.buttonText}>Sign up</Text>
                 </Pressable>
             </View>

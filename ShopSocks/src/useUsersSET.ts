@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const config = require('./config'); 
-
-
 // export type ResultJson = {
 //     id: string,
 //     name: string,
@@ -17,8 +14,12 @@ const config = require('./config');
 // }
 
 const useUsersSET = async (name: string, surname: string, email: string, password: string) => {
+
+    const localhost = "192.168.149.225";
+
+
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", `http://${config.localhost}:3000/users`);
+    xhr.open("POST", `http://${localhost}:3000/users`);
     xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
     const body = JSON.stringify({
         name: name,
