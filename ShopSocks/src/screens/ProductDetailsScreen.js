@@ -28,7 +28,7 @@ const ProductDetailsScreen = ({ route }) => {
       ) : (
         <Text style={styles.detailText}>No product details available</Text>
       )}
-  
+
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
 
 
@@ -36,11 +36,11 @@ const ProductDetailsScreen = ({ route }) => {
       </ScrollView>
 
       <Button title="Add"/>
-      
+
 
         </View>
   );
-  
+
 };
 
 

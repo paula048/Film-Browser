@@ -63,7 +63,7 @@ export default function LoginScreen({ setIsAuthenticated }) {
 
   
       // W ramach testó tymczasowo sprawdzam przez 'name'   => potem ZMIEŃ na 'email' !
-      const user = jsonResponse.find(user => user.name === email);
+      const user = jsonResponse.find(user => user.email === email);
   
       if (user) {
         console.log("Użytkownik istnieje.");

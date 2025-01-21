@@ -82,8 +82,10 @@ npx react-native run-android
 - SignUpScreen - Rejestracja - powrót do ekranu logowania
 - SignUpScreen - Rejestracja - widoczność przycisku rejestracji
 
-[simple tests](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test1.js)
+[simple tests 1](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test1.js)
 [Rejestracja](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test2.js)
+[simple tests 2](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test3.js)
+
 
 ---
 
