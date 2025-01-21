@@ -58,9 +58,9 @@ npx react-native run-android
 
 ## Testy
 ### testy jednostkowe:
-- LoginScreen - kliknięcie przycisku 'zaloguj się' Done
-- LoginScreen - przejście do formularza Rejestracji D
-- SettingsScreen - kliknięcie przycisku 'wyloguj się' D
+- LoginScreen - kliknięcie przycisku 'zaloguj się'
+- LoginScreen - przejście do formularza Rejestracji
+- SettingsScreen - kliknięcie przycisku 'wyloguj się'
 - LoginScreen - sprawdzenie, czy pole e-mail jest obecne
 - LoginScreen - sprawdzenie, czy pole hasło jest obecne
 - LoginScreen - przycisk Zaloguj się jest wyłączony, gdy brak danych
@@ -71,7 +71,7 @@ npx react-native run-android
 
 
 ### testy integracyjne:
-- SignUpScreen - Rejestracja D
+- SignUpScreen - Rejestracja
 - SignUpScreen - Rejestracja - brak e-maila
 - SignUpScreen - Rejestracja - brak hasła
 - SignUpScreen - Rejestracja - hasło zbyt krótkie
@@ -81,6 +81,10 @@ npx react-native run-android
 - SignUpScreen - Rejestracja - już istniejący użytkownik
 - SignUpScreen - Rejestracja - powrót do ekranu logowania
 - SignUpScreen - Rejestracja - widoczność przycisku rejestracji
+
+[simple tests](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test1.js)
+[Rejestracja](https://github.com/paula048/Film-Browser/blob/TiJO/ShopSocks/__tests__/test2.js)
+
 ---
 
 #
