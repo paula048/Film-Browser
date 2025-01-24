@@ -32,7 +32,7 @@ const getMerchants = async () => {
   }
 };
 
-const users_path = "socks_shop.users";
+const users_path = "film_testy.users";
 
 const getUsers = async () => {
   try {
@@ -53,6 +53,56 @@ const getUsers = async () => {
     console.error(error_1);
     throw new Error("Internal server error");
   }
+};
+
+
+
+
+
+const favorites_path = "film_testy.favorites";
+
+const getFavorites = async () => {
+  try {
+    return await new Promise(function (resolve, reject) {
+      pool.query(`SELECT * FROM ${favorites_path}`, (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        if (results && results.rows) {
+          console.log("RES:  "+results);
+          resolve(results.rows);
+        } else {
+          reject(new Error("No results found"));
+        }
+      });
+    });
+  } catch (error_1) {
+    console.error(error_1);
+    throw new Error("Internal server error");
+  }
+};
+
+
+
+const getFavoritesFromUser = (user_id) => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      "SELECT * FROM film_testy.favorites WHERE user_id = 1",
+      [user_id],
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        if (results && results.rows) {
+          resolve(
+            `A new merchant has been added: ${JSON.stringify(results.rows)}`
+          );
+        } else {
+          reject(new Error("No results found"));
+        }
+      }
+    );
+  });
 };
 
 
@@ -160,5 +210,6 @@ module.exports = {
   deleteMerchant,
   getUsers,
   addUser,
-  getFilmList
+  getFilmList,
+  getFavorites
 };

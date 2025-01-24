@@ -27,16 +27,7 @@ export default function LoginScreen({ setIsAuthenticated }) {
 
     const { error, loading, jsonResponse } = useUsers();
 
-    const getData = async (key) => {
-      try {
-        const value = await AsyncStorage.getItem(key);
-        if (value !== null) {
-          console.log("ASYNC GET, value exist: "+value);
-        }
-      } catch (e) {
-        console.log("ASYNC GET: "+key+"    ERROR: "+e);
-      }
-    };
+
 
 
 

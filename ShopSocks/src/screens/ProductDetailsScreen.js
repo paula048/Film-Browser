@@ -32,7 +32,7 @@ const getData = async (key) => {                // pobieranie nie pojedynczego o
 
 const handleAdd = () => {
     console.log("Clicked Button ADD");
-    
+
 }
 
 const ProductDetailsScreen = ({ route }) => {

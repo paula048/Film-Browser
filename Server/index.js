@@ -39,6 +39,19 @@ app.get('/users', (req, res) => {
 })
 
 
+app.get('/favorites', (req, res) => {
+  console.log("Wyswietlanie: "+ JSON.stringify(req.body));
+  merchant_model.getFavorites()
+  .then(response => {
+    console.log("VALUE: "+JSON.stringify(response.body));
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+})
+
+
 
 app.post('/users', (req, res) => {
   console.log(`Request: `);
