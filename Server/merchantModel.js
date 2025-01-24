@@ -57,10 +57,12 @@ const getUsers = async () => {
 
 
 
-const getSizes = async () => {
+
+
+const getFilmList = async () => {
   try {
     return await new Promise(function (resolve, reject) {
-      pool.query(`SELECT * FROM socks_shop.availability`,
+      pool.query(`SELECT * FROM film_testy.film`,
       [],
       (error, results) => {
           if (error) {
@@ -77,30 +79,6 @@ const getSizes = async () => {
     console.error(error_1);
     throw new Error("Internal server error");
   }
-};
-
-
-
-
-const createMerchant = () => {
-  return new Promise(function (resolve, reject) {
-    pool.query(
-      "INSERT INTO socks_shop.availability (sock_id, size, quantity) VALUES ($1, $2, $3) RETURNING *",
-      [3, 30, 121],
-      (error, results) => {
-        if (error) {
-          reject(error);
-        }
-        if (results && results.rows) {
-          resolve(
-            `A new merchant has been added: ${JSON.stringify(results.rows)}`
-          );
-        } else {
-          reject(new Error("No results found"));
-        }
-      }
-    );
-  });
 };
 
 
@@ -126,35 +104,6 @@ const addUser = (body) => {
     );
   });
 };
-
-
-
-
-
-
-//pierwotne ----------- SAVE
-// const createMerchant = (body) => {
-//   return new Promise(function (resolve, reject) {
-//     const { sock_id, size, quantity } = body;
-//     pool.query(
-//       "INSERT INTO socks_shop.availability (sock_id, size, quantity) VALUES ($1, $2, $3) RETURNING *",
-//       [sock_id, size, quantity],
-//       (error, results) => {
-//         if (error) {
-//           reject(error);
-//         }
-//         if (results && results.rows) {
-//           resolve(
-//             `A new merchant has been added: ${JSON.stringify(results.rows[0])}`
-//           );
-//         } else {
-//           reject(new Error("No results found"));
-//         }
-//       }
-//     );
-//   });
-// };
-
 
 
 
@@ -206,57 +155,10 @@ const deleteMerchant = (from, where, id) => {
 
 
 
-//pierwotna wersja --------------------  SAVE
-const updateMerchant = (id, body) => {
-  return new Promise(function (resolve, reject) {
-    pool.query(
-      "UPDATE socks_shop.availability SET quantity = $1 WHERE sock_id=$2 and size=$3 RETURNING *",
-      [20, 1, 36],
-      (error, results) => {
-        if (error) {
-          reject(error);
-        }
-        if (results && results.rows) {
-          resolve(`Merchant updated: ${JSON.stringify(results.rows[0])}`);
-        } else {
-          reject(new Error("No results found"));
-        }
-      }
-    );
-  });
-};
-
-
-
-//pierwotna wersja --------------------  SAVE
-// const updateMerchant = (id, body) => {
-//   return new Promise(function (resolve, reject) {
-//     const { name, email } = body;
-//     pool.query(
-//       "UPDATE merchants SET name = $1, email = $2 WHERE id = $3 RETURNING *",
-//       [name, email, id],
-//       (error, results) => {
-//         if (error) {
-//           reject(error);
-//         }
-//         if (results && results.rows) {
-//           resolve(`Merchant updated: ${JSON.stringify(results.rows[0])}`);
-//         } else {
-//           reject(new Error("No results found"));
-//         }
-//       }
-//     );
-//   });
-// };
-
-
-
 module.exports = {
   getMerchants,
-  createMerchant,
   deleteMerchant,
-  updateMerchant,
   getUsers,
   addUser,
-  getSizes
+  getFilmList
 };
